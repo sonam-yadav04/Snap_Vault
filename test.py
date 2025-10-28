@@ -22,9 +22,9 @@ def token_required(func):
     @wraps(func)
     def decorated(*args, **kwargs ):
          token = request.args.get('token')
-        if not token:
+         if not token:
             return jsonify({'token':'token is missing'})
-        try:
+         else:
             return jsonify({'Alert':'invailid token'})
 
 
