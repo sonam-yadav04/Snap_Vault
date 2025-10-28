@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>File Upload and Download</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f4f6f9;
+      text-align: center;
+      padding: 40px;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input[type="file"] {
+      margin: 10px;
+
+    }
+
+    .file-list {
+      margin-top: 40px;
+       display: flex;
+        flex-wrap: wrap;
+           justify-content: center;
+             gap: 20px;
+    }
+
+    .file-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+
+      width: 300px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .file-card img {
+      max-width: 100%;
+      max-height: 150px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .download-btn {
+      padding: 8px 15px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .download-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Upload and Download Files</h2>
+  <form action="/" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <br>
+    <input type="submit" value="Upload">
+  </form>
+
+  <div class="file-list">
+    <h3>Uploaded Files</h3>
+
+            <a class="download-btn" href="{{ url_for('index') }}">back to home</a>
+    {% for file in files %}
+    <div class="file-card">
+      <strong>{{ file.filename }}</strong><br>
+      {% if file.image %}
+        <img src="data:image/jpeg;base64,{{ file.image }}">
+      {% else %}
+        <p>[Not an image]</p>
+      {% endif %}
+      <a class="download-btn" href="{{ url_for('download', file_id=file.id) }}">Download</a>
+    </div>
+    {% endfor %}
+  </div>
+
+</body>
+</html>
