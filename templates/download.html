@@ -2,9 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Download File - SnapVault</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f9f9f9;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    #popup {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 5px;
+      display: none;
+      margin: 20px auto;
+      width: fit-content;
+      animation: fadeinout 4s ease;
+    }
+
+    @keyframes fadeinout {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
 </head>
 <body>
-$END$
+
+  <h2>📥 Download is in process...</h2>
+
+  <div id="popup">✅ File downloaded successfully!</div>
+
+  <script>
+    function showPopup() {
+      const popup = document.getElementById("popup");
+      popup.style.display = "block";
+
+      setTimeout(() => {
+        popup.style.display = "none";
+        window.location.href = "{{ url_for('home') }}"; // Redirect back to home after 4s
+      }, 4000);
+    }
+
+    function startDownload() {
+      const link = document.createElement('a');
+      link.href = "{{ url_for('start_download', file_id=file_id) }}";
+      link.download = '';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    window.onload = function () {
+      showPopup();
+      startDownload();
+    }
+  </script>
+
 </body>
 </html>

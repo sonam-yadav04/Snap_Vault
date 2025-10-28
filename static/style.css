@@ -1,0 +1,161 @@
+
+
+.logincontent{
+    padding: 10px ,10px;
+    margin:  auto;
+    height: 500px;
+    width: 600px;
+    background-color: gray;
+    border-radius: 10px;
+    background-image:url("https://plus.unsplash.com/premium_photo-1683309565422-77818a287060?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cG9ydGZvbGlvJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D");
+    background-size: cover;
+    background-position:center;
+
+    background-attachment:fixed;
+
+}
+
+.registercontent{
+    margin: auto;
+    height: 700px;
+    width: 670px;
+
+    border-radius: 10px;
+     background-image:url("https://plus.unsplash.com/premium_photo-1683309565422-77818a287060?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cG9ydGZvbGlvJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D");
+    background-size: cover;
+    background-position:center;
+
+    background-attachment:fixed;
+
+
+
+}
+.logintop{
+    padding: 50px, 10px;
+    height: 60px;
+    width: 600px;
+    text-align: center;
+    background-color: skyblue;
+    color: #ffffff;
+}
+
+.registertop{
+    height: 70px;
+    width: 670px;
+    background-color: skyblue;
+    color: black;
+    border-radius: 5%;
+}
+
+.textbox{
+    padding: 10px 40px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+::placeholder {
+    color: black;
+    opacity: 1;
+    font-style: oblique;
+    font-weight: bold;
+
+}
+
+.btn {
+    padding: 10px 40px;
+    background-color: skyblue;
+    color: #FFFFFF;
+    font-style: oblique;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.worddark{
+    color: black;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.wordlight{
+    color: #FFFFFF;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+*{
+
+    box-sizing: border-box;
+
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.one{
+    display: flex;
+    position: relative;
+}
+
+.one .two{
+     width: 225px;
+    height: 100%;
+    background: gray;
+    padding: 30px 0px;
+    position: fixed;
+}
+
+.one .two h1{
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.one .two h2{
+    color: #fff;
+    text-align: center;
+}
+
+.one .two .active{
+     background: #0a8032;
+}
+
+.one .two ul li{
+    text-align: center;
+    padding: 15px;
+    border-bottom: 0.1px solid white;
+    border-top: 0.1px solid white;
+}
+
+.one .two ul li a{
+    color: #ffffff;
+    display: block;
+}
+
+.one .two ul li a .side{
+    width: 25px;
+    align:center;
+}
+
+.one .content{
+    width: 100%;
+    margin-left: 200px;
+}
+
+.one .content .topbar{
+    text-align: center;
+    padding: 20px;
+    background: gray;
+    color: white;
+}
+
+.one .content .contentbar{
+    margin: auto;
+}
+
+.one .content .contentbar h1{
+    color: #11a844;
+    text-align: center;
+    font-style: oblique;
+    font-weight: bold;
+}
